@@ -13,7 +13,7 @@ export default function WhiteCard(props) {
         <View style={styles.container}>
             <Image style={styles.image} source={require(`../../assets/ilhacorona.jpg`)} />
             <View style={{ flexDirection: 'row' }}>
-                {bolinhas.map((index) => <Bolinha key={index} />)}
+                {bolinhas.map((bolinha, index) => <Bolinha key={index} index={index} />)}
             </View>
             <DivisionBar />
             <View style={styles.viewButtons}>
@@ -22,26 +22,32 @@ export default function WhiteCard(props) {
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Cervejas</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionalButtons}>
-                    <Ionicons name="beer" size={22} color='gold' />
+                    <Ionicons name="pint" size={22} color='gold' />
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Destilados</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionalButtons}>
-                    <Ionicons name="beer" size={22} color='gold' />
+                    <Ionicons name="wine" size={22} color='gold' />
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Vinhos</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionalButtons}>
-                    <Ionicons name="beer" size={22} color='gold' />
+                    <Ionicons name="cafe" size={22} color='gold' />
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Sem Álcool</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionalButtons}>
-                    <Ionicons name="beer" size={22} color='gold' />
+                    <Ionicons name="gift" size={22} color='gold' />
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Lojinha</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.optionalButtons}>
-                    <Ionicons name="beer" size={22} color='gold' />
+                    <Ionicons name="fast-food" size={22} color='gold' />
                     <Text style={{marginLeft: 5, paddingTop: 2.2}}>Comidinhas</Text>
                 </TouchableOpacity>
             </View>
+            <DivisionBar/>
+            <View styles={styles.viewDestaques}>
+            <Text style={styles.textDestaques}>Destaques</Text>
+            <Image style={styles.imgDestaques} source={require(`../../assets/destaques.jpg`)} />
+            </View>
+            <DivisionBar/>
         </View>
     );
 }
@@ -75,5 +81,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: 170,
         marginBottom: 8,
+    },
+    imgDestaques: {
+        height: 100,
+        width: 330,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+    },
+    textDestaques: {
+        color: '#A9A9A9',
+        fontWeight: '500',
+        fontSize: 17,
+        marginBottom: 10,
+        
+    },
+    viewDestaques: {
+
     }
 })
